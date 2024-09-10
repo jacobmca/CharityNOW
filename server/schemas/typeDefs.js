@@ -3,12 +3,7 @@ const typeDefs = `
     _id: ID!
     username: String!
     email:String!
-    charityContributions: [CharityContribution]
-  }
-  input CharityContributionInput {
-    charityId: ID!
-    amount: Float!
-    dateContributed: String!
+    charities: [Charity]
   }
   type Charity {
     _id: ID!

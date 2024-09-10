@@ -2,7 +2,6 @@ const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
 
 // Import the moment lib for user friendly formatting of the timestamp
-const moment = require('moment');
 
 // import schema from Book.js
 const charitySchema = require('./Charity');
@@ -25,26 +24,10 @@ const userSchema = new Schema(
             required: true,
         },
         charities: [charitySchema],
-
-        charityContributions: [
-            {
-                charityId: {
-                    type: Schema.Types.ObjectId, 
-                    ref: 'Charity'
-                },
-                amount: Number,
-                createdAt: {
-                    type: Date,
-                    default: Date.now,
-                    get: (timestamp) => moment(timestamp).format('MMM DD, YYYY [at] hh:mm a'),
-                }
-            }
-        ]
     },
     // set this to use virtual below
     {
         toJSON: {
-            getters: true,
             virtuals: true,
         },
     }
