@@ -1,6 +1,6 @@
 const { Schema, model } = require('mongoose');
 
-const moment = require('moment');
+// const moment = require('moment');
 
 const donationSchema = new Schema(
     {
@@ -8,16 +8,16 @@ const donationSchema = new Schema(
             type: Number,
             required: true,
             unique: false,
-            default: Date.now,
-            get: (timestamp) => moment(timestamp).format('MMM DD, YYYY [at] hh:mm a'),
+            // default: Date.now,
+            // get: (timestamp) => moment(timestamp).format('MMM DD, YYYY [at] hh:mm a'),
         },
         user: {
-            type: Schema.Types.ObjectId,
+            type: String,
             ref: 'User',
         },
         charity: 
         {
-            type: Schema.Types.ObjectId,
+            type: String,
             ref: 'Charity',
         },
     },
@@ -31,9 +31,9 @@ const donationSchema = new Schema(
 );
 
 // return the amount donated
-donationSchema.virtual('amount').get(function () {
+donationSchema.virtual('totalAmount').get(function () {
     return this.amount;
 });
 
-const User = model('Donation', donationSchema);
-module.exports = User;
+const Donation = model('Donation', donationSchema);
+module.exports = Donation;

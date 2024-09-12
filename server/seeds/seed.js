@@ -1,9 +1,10 @@
 const db = require('../config/connection');
-const { Charity, User } = require('../models');
+const { Charity, User, Donation } = require('../models');
 const cleanDB = require('./cleanDB');
 
 const charityData = require('./charityData.json');
 const userData = require('./userData.json');
+const donationData = require('./donationData.json');
 
 db.once('open', async () => {
   // clean database
@@ -13,6 +14,7 @@ db.once('open', async () => {
   // bulk create each model
   const charities = await Charity.insertMany(charityData); 
   const users = await User.insertMany(userData);
+  const donations = await Donation.insertMany(donationData);
 
 
   for(newCharity of charities) {
@@ -21,6 +23,8 @@ db.once('open', async () => {
     tempUser.charities.push(newCharity._id);
     await tempUser.save();
   }
+
+
 
   console.log('all done!');
   process.exit(0);
