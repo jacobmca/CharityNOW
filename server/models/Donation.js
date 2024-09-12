@@ -4,38 +4,26 @@ const bcrypt = require('bcrypt');
 // Import the moment lib for user friendly formatting of the timestamp
 
 // import schema from Book.js
-const charitySchema = require('./Charity');
+const donorSchema = require('./Donation');
 
-const userSchema = new Schema(
+const donorSchema = new Schema(
     {
-        username: {
-            type: String,
-            required: true,
-            unique: true,
+        
+        user: {
+            type: Schema.Types.ObjectId,
+            ref: 'User',
         },
-        email: {
-            type: String,
+        amount: {
+            type: Number,
             required: true,
-            unique: true,
-            match: [/.+@.+\..+/, 'Must use a valid email address'],
+            unique: false,
         },
-        password: {
-            type: String,
-            required: true,
+        charity: 
+        {
+            type: Schema.Types.ObjectId,
+            ref: 'Charity',
         },
-        donations: [
-            {
-                type: Schema.Types.ObjectId,
-                ref: 'Donation',
-            },
-        ],
-        // array of _id values referencing the Book model
-        // charities: [
-        //     {
-        //         type: Schema.Types.ObjectId,
-        //         ref: 'Charity',
-        //     },
-        // ],
+       
         // set saved charities to be an array of the charitySchema
         //charities: [charitySchema],
     },

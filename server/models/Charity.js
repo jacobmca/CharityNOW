@@ -24,17 +24,32 @@ const charitySchema = new Schema({
     type: String,
     required: true,
   },
+  
   amountContributed: {
-    amount: Number,
+    totalAmount: Number,
     default: Date.now,
     get: (timestamp) => moment(timestamp).format('MMM DD, YYYY [at] hh:mm a'),
   },
   image: {
     type: String,
   },
-},
+  users: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'User',
+      }
+  ],
+  donation: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: 'Donation',
+    }
+  ]
+  },
+  // set this to use virtual below
   {
     toJSON: {
+      virtuals: true,
       getters: true
     },
   }
@@ -42,8 +57,8 @@ const charitySchema = new Schema({
 
 // If this is a subdocument schema and we are not creating a model out of it
 // then we need to comment out the following two lines below
-//const Charity = model('Charity', charitySchema);
-//module.exports = Charity;
+const Charity = model('Charity', charitySchema);
+module.exports = Charity;
 
 // Instead, we should export the schema
-module.exports = charitySchema;
+//module.exports = charitySchema;
