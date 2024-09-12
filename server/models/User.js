@@ -1,11 +1,6 @@
 const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
 
-// Import the moment lib for user friendly formatting of the timestamp
-
-// import schema from Book.js
-const charitySchema = require('./Charity');
-
 const userSchema = new Schema(
     {
         username: {
@@ -29,17 +24,7 @@ const userSchema = new Schema(
                 ref: 'Donation',
             },
         ],
-        // array of _id values referencing the Book model
-        // charities: [
-        //     {
-        //         type: Schema.Types.ObjectId,
-        //         ref: 'Charity',
-        //     },
-        // ],
-        // set saved charities to be an array of the charitySchema
-        //charities: [charitySchema],
     },
-    // set this to use virtual below
     {
         toJSON: {
             virtuals: true,
@@ -63,10 +48,9 @@ userSchema.methods.isCorrectPassword = async function (password) {
 };
 
 // when we query a user, we'll also get another field called `bookCount` with the number of saved books we have
-userSchema.virtual('charityCount').get(function () {
-    return this.charities.length;
+userSchema.virtual('donationCount').get(function () {
+    return this.donations.length;
 });
 
 const User = model('User', userSchema);
-
 module.exports = User;
