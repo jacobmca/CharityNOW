@@ -1,0 +1,27 @@
+[
+    {
+      "name": "Smile Train, Inc.",
+      "image": "https://ucarecdn.com/b181ef00-7d90-4276-af5f-1889396e9fb6/-/resize/1248x/-/format/auto/",
+      "description": "Smile Train, Inc. is a non-profit organization that aims to ensure that every persion has access to safe, quality Cleft care.",
+      "address": "633 Third Ave. 9th FL, New York, NY 10017-6706"
+    },
+    {
+      "name": "American Red Cross",
+      "image": "./images/red-cross.jpeg",
+      "description": "The American Red Cross has been the nation's premier emergency response organization. It brings shelter, food and comfort to those affected by disasters, large and small.", 
+      "address": "431 Eighteenth Street, NW Washington DC, 20006"
+    },
+    {
+      "name": "UNICEF USA",
+      "image": "./images/unicef.jpeg",
+      "description": "Over eight decades, the United Nations Children's Fund (UNICEF) has built an unprecedented global support system for the world's children. UNICEF relentlessly works day in and day out to deliver the essentials that give every child an equitable chance in life: health care and immunizations, safe water and sanitation, nutrition, education, emergency relief and more.",
+      "address": "125 Maiden Lane, New York, NY 10038"
+    },
+    {
+      "name": "World Central Kitchen",
+      "image": "./images/world-kitchen.jpeg",
+      "description": "World Central Kitchen (WCK) is a nonprofit organization that is first to the frontlines providing fresh meals in response to crises, while working to build resilient food systems with locally led solutions.",
+      "address": "200 Massachusetts Ave. NW 7th Floor, Washington DC, 20001"
+    } 
+  ]
+  
