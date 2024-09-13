@@ -8,4 +8,15 @@ export default defineConfig({
       '@': '/src',
     },
   },
+  server: {
+    port: 5173,
+    open: true,
+    proxy: {
+      '/graphql': {
+        target: 'http://localhost:3001',
+        changeOrigin: true,
+        secure: false,
+      },
+    }
+  }
 });
