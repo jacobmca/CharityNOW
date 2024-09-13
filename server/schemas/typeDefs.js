@@ -17,7 +17,7 @@ const typeDefs = `
   }
   type Query {
     me:User
-    allCharity:Charity
+    allCharity:[Charity]
   }
 
   type Mutation {

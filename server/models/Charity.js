@@ -1,7 +1,8 @@
-const { Schema } = require('mongoose');
+const mongoose = require('mongoose');
+const { Schema , model } = mongoose;
 //const moment = require('moment');
 
-const Donation = mongoose.model('Donation');
+// const Donation = mongoose.model('Donation');
 
 const charitySchema = new Schema({
   name:

@@ -18,6 +18,12 @@ const userSchema = new Schema(
             type: String,
             required: true,
         },
+        charities: [
+            {
+                type: Schema.Types.ObjectId,
+                ref: 'Charity',
+            },
+        ],
         donations: [
             {
                 type: Schema.Types.ObjectId,
