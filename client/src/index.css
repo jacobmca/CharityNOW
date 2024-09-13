@@ -1,0 +1,186 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: black;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+.former-body {
+  margin: 0;
+  min-width: 100vw;
+  min-height: 100vh;
+  background-color: black;
+  color: "white";
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+/* Home Page */
+
+.home-main {
+  margin-top: 40%;
+}
+
+/* .former-body {
+  padding-top: 210px;
+  padding-left: 210px;
+} */
+
+/* Navigation Bar */
+
+.navbar-index {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000; /* Ensure the navbar is on top of other elements */
+}
+
+.navbar-nav {
+  list-style-type: none; /* Remove bullet points */
+  padding: 0; /* Remove default padding */
+  margin-top: 20; /* Remove default margin */
+  display: flex; /* Use flexbox to make the list items horizontal */
+  justify-content: flex-end; /* Center the navigation items horizontally */
+  align-items: center; /* Vertically center the navigation items */
+}
+
+.nav-item {
+  margin: 0 1rem; /* Add some spacing between the navigation items */
+}
+
+.navigation-links {
+  text-decoration: none; /* Remove underline */
+  color: #fff; /* Set the text color */
+  padding: 0.5rem 1rem; /* Add some padding */
+  transition: background-color 0.3s ease; /* Add a transition for hover effect */
+}
+
+.navbar .nav-item .navigation-links {
+  text-decoration: none;
+  transition: transform .2s; 
+}
+
+.navbar .nav-item .navigation-links:hover,
+.navbar .nav-item .navigation-links:focus {
+  transform: scale(1.02);
+}
+
+.navbar .nav-item .navigation-links.active-link {
+  color: #99ebff !important;
+  font-weight: bold !important;
+}
+
+/* Charities Page */
+
+.charity-div {
+  max-width: 100%;
+  padding: 10px;
+  text-align: center;
+}
+
+.pick-charity {
+  text-align: center;
+  margin-top: -10px;
+  padding-top: 60px;
+}
+
+/* Contact Page */
+
+.contact-container {
+  padding-top: 15%;
+}
+
+.contact-title {
+  text-align: center;
+}
+
+.contact-h1 {
+  font-size: 96px;
+  margin-bottom: 0.5rem; /* Adjust this value to your desired margin */
+}
+
+.contact-description {
+  font-size: 24px;
+  margin-top: 0.5rem; /* Adjust this value to your desired margin */
+}
+
+.contact-form {
+  margin: auto;
+  width: 50%;
+  border: 3px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.contact-input-basic {
+  margin-top: 15px;
+  width: 600px;
+  height: 24px;
+}
+
+.contact-text-area {
+  margin-top: 15px;
+  width: 600px;
+  height: 72px;
+}
+
+.contact-submit-button {
+  margin-top: 10px;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}

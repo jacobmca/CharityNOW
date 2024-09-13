@@ -1,49 +1,67 @@
-import "./App.css";
-import { Outlet } from "react-router-dom";
+import './App.css';
 import {
   ApolloClient,
-  ApolloProvider,
   InMemoryCache,
+  ApolloProvider,
   createHttpLink,
-} from "@apollo/client";
-import { setContext } from "@apollo/client/link/context";
-import Charity from "components/Charity";
-import Donation from "components/Donation";
-import LoginForm from "components/LoginForm";
-import Navigation from "components/Navigation";
-import SignupForm from "components/SignupForm";
+} from '@apollo/client';
+import { setContext } from '@apollo/client/link/context';
+// import { Outlet } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-import Contact from "./components/pages/Contact.jsx";
-import Donate from "./components/pages/Donate.jsx";
-import Home from "./components/pages/Home.jsx";
-import Profile from "./components/pages/Profile.jsx";
+import Navigation from './components/Navigation';
+import Donation from './components/Donation';
+import ContactPage from './pages/Contact';
 
-import "./index.css";
+import Home from './pages/Home';
+import Donate from './pages/Donate';
+import Profile from './pages/Profile';
 
+// Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
-  uri: "/graphql",
+  uri: '/graphql',
+});
+
+// Construct request middleware that will attach the JWT token to every request as an `authorization` header
+const authLink = setContext((_, { headers }) => {
+  // get the authentication token from local storage if it exists
+  const token = localStorage.getItem('id_token');
+  // return the headers to the context so httpLink can read them
+  return {
+    headers: {
+      ...headers,
+      authorization: token ? `Bearer ${token}` : '',
+    },
+  };
+});
+
+const client = new ApolloClient({
+  // Set up our client to execute the `authLink` middleware prior to making the request to our GraphQL API
+  link: authLink.concat(httpLink),
+  cache: new InMemoryCache(),
 });
 
 function App() {
   return (
-    <Router>
-      <div
-        style={{
-          minHeight: "100vh",
-        }}
-      >
-        <div className="navbar navbar-expand-sm bg-secondary bg-transparent">
-          <div className="container-fluid">
-            <Navigation />
+    <ApolloProvider client={client}>
+      <Router>
+        <div className="former-body">
+          <div className="navbar navbar-expand-sm bg-secondary bg-transparent">
+            <div className="container-fluid">
+              <Navigation />
+            </div>
           </div>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/home" element={<Home />} />
+            <Route path="/donate" element={<Donate />} />
+            <Route path="/contact" element={<ContactPage />} />
+            <Route path="/profile" element={<Profile />} />
+            </Routes>
         </div>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/portfolio" element={<Donate />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
-        <Footer />
-      </div>
-    </Router>
+      </Router>
+    </ApolloProvider>
   );
 }
+
+export default App;
