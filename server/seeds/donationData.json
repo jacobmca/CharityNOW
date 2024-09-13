@@ -1,0 +1,22 @@
+[
+    {
+        "amount": 50,
+        "user": "matt1234",
+        "charity": "Smile Train, Inc."
+    },
+    {
+        "amount": 80,
+        "user": "mehrdod1234",
+        "charity": "American Red Cross"
+    },
+    {
+        "amount": 100,
+        "user": "stefan1234",
+        "charity": "UNICEF USA"
+    },
+    {
+        "amount": 200,
+        "user": "jacob1234",
+        "charity": "World Central Kitchen"
+    }
+]
