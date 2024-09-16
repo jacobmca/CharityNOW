@@ -1,27 +1,25 @@
 import React, { useState } from 'react';
 
-function Charity({ name, image, description, donate }) {
-    const [isExpanded, setIsExpanded] = useState(false);
-    const handleToggle = () => {
-        setIsExpanded(!isExpanded);
-    }
+function Charity({ name, image, description, isExpanded, onToggle }) {
     return (
-        <div className="card charity-div" onClick={handleToggle} style={{ cursor: 'pointer' }}>
-            <img src={image} className="card-img-top" alt={`title`} />
-            <div className="card-body">
-                <h2 className="card-title text-center">{name}</h2>
-                {isExpanded && (
-                    <div className="card-text">
-                        <h4>{description}</h4>
-                    <a href={donate} target="_blank" rel="noopener noreferrer" className="btn btn-secondary d-block mb-2">Donate!</a>
-                </div>
-                )}
-                <button onClick={handleToggle} className="btn btnlink" >
-                    {isExpanded ? 'Close' : 'More'}
-                </button>
-            </div>
+        <div className="">
+          <div className="charity-image-container">
+            <img src={image} className="charity-image" alt={`title`} />
+          </div>
+          <div className="charity-content">
+            <h2 className="charity-title">{name}</h2>
+            {isExpanded && (
+              <div className="charity-description">
+                <h4>{description}</h4>
+                <button className="donate-button">Donate!</button>
+              </div>
+            )}
+            <button onClick={onToggle} className="close-btn btn btn-link">
+              {isExpanded ? 'Close' : 'More'}
+            </button>
+          </div>
         </div>
-    )
-}
+      )
+    }
 
 export default Charity;

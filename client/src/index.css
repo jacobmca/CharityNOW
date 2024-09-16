@@ -68,6 +68,11 @@ button:focus-visible {
 
 /* Navigation Bar */
 
+.navbar {
+  background-color: black; /* Dark background for the navbar */
+  padding: 1rem;
+}
+
 .navbar-index {
   position: fixed;
   top: 0;
@@ -113,6 +118,52 @@ button:focus-visible {
 
 /* Charities Page */
 
+.charity-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+  background-color: #000d33;
+  transition: background-color 0.3s ease, height 0.3s ease;
+  border-radius: 25px;
+  overflow: hidden;
+}
+
+charity-card.expanded {
+  max-height: 600px;
+}
+
+.charity-card:hover {
+  background-color: #003366;
+}
+
+.charity-image-container {
+  width: 100%;
+  max-width: 300px;
+}
+
+.charity-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding-top: 20px;
+}
+
+.charity-content {
+  width: 100%;
+  max-width: 300px;
+  text-align: center;
+}
+
+.charity-title {
+  margin-top: 10px;
+}
+
+.charity-description {
+  margin-bottom: 10px;
+}
+
 .charity-div {
   max-width: 100%;
   padding: 10px;
@@ -122,7 +173,49 @@ button:focus-visible {
 .pick-charity {
   text-align: center;
   margin-top: -10px;
-  padding-top: 60px;
+  padding-top: 75px;
+  padding-bottom: 60px;
+  font-size: 72px;
+}
+
+.card-img-top {
+  width: 500px;;
+  height: auto;
+}
+
+.charity-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.charity-grid > div {
+  width: calc(30% - 10px);
+  margin-bottom: 20px;
+}
+
+.donate-button {
+  background-color: black;
+  border: white;
+  border-width: 5px;
+  border-radius: 15px;
+  color: white;
+  padding: 15px 20px;
+  margin-bottom: 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.close-btn {
+  margin-bottom: 15px;
+}
+
+@media (max-width: 768px) {
+  .charity-grid > div {
+    width: 100%;
+  }
 }
 
 /* Contact Page */
@@ -137,12 +230,12 @@ button:focus-visible {
 
 .contact-h1 {
   font-size: 96px;
-  margin-bottom: 0.5rem; /* Adjust this value to your desired margin */
+  margin-bottom: 0.5rem;
 }
 
 .contact-description {
   font-size: 24px;
-  margin-top: 0.5rem; /* Adjust this value to your desired margin */
+  margin-top: 0.5rem;
 }
 
 .contact-form {
@@ -183,4 +276,76 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+/* Login/Sign Up Modal */
+
+/* Modal overlay (background) */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7); /* Dim background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Modal container (content box) */
+.modal-container {
+  background-color: #262626;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 500px;
+  width: 100%;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Modal header and navigation */
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Close button for modal */
+.close-button {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Modal navigation for switching between login and signup */
+.modal-nav button {
+  margin: 0 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color: #1a1a1a;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.modal-nav button:hover {
+  background-color: #333;
+}
+
+/* Modal body */
+.modal-body {
+  margin-top: 20px;
+}
+
+/* Add some padding around the forms inside the modal */
+.modal-body form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-control {
+  margin-left: 15px;
 }
