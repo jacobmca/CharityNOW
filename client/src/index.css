@@ -57,14 +57,65 @@ button:focus-visible {
 
 /* Home Page */
 
-.home-main {
+/* .home-main {
   margin-top: 40%;
-}
-
-/* .former-body {
-  padding-top: 210px;
-  padding-left: 210px;
 } */
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 140px); /* Adjusted height to fit within the viewport */
+  margin-top: -100px; /* Adjusted margin to fit below the navbar */
+  text-align: center;
+}
+.welcome-h1 {
+  font-size: 24px; /* Reduced font size */
+  margin-bottom: 20px; /* Increased margin to create more space below the heading */
+  background-color: rgba(211, 211, 211, 0.7);
+  padding: 15px; /* Reduced padding */
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  display: inline-block;
+}
+.discription-1{
+  font-size: 24px; /* Reduced font size */
+  margin-bottom: 20px; /* Increased margin to create more space below the heading */
+  background-color: rgba(211, 211, 211, 0.7);
+  padding: 15px; /* Reduced padding */
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  display: inline-block;
+}
+.image-container {
+  display: flex;
+  justify-content: center; /* Center images horizontally */
+  gap: 70px; /* Space between the images */
+  margin-top: 60px; /* Space above the image container */
+}
+.homepage-image-1,
+.homepage-image-2 {
+  width: 500px; /* Adjust width as needed */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: cover;
+}
+.footer {
+  background-color: maroon;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  width: 100%;
+  height: 70px; /* Same height as the navbar for consistency */
+  display: flex;
+  align-items: center; /* Center text vertically */
+  justify-content: center; /* Center text horizontally */
+  position: relative; /* Ensure footer remains at the bottom of the page */
+  bottom: -115px;
+}
+.footer p {
+  margin: 0; /* Remove default margin from the paragraph */
+}
 
 /* Navigation Bar */
 
@@ -208,8 +259,16 @@ charity-card.expanded {
   font-size: 16px;
 }
 
+label {
+  margin-right: 10px;
+}
+
 .close-btn {
   margin-bottom: 15px;
+}
+
+.submit-donation-btn {
+  margin-top: 15px;
 }
 
 @media (max-width: 768px) {
@@ -221,46 +280,77 @@ charity-card.expanded {
 /* Contact Page */
 
 .contact-container {
-  padding-top: 15%;
+  /* padding-top: 15%; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
-
 .contact-title {
   text-align: center;
 }
-
 .contact-h1 {
-  font-size: 96px;
-  margin-bottom: 0.5rem;
+  font-size: 72px;
+  margin-bottom: 0.5rem; /* Adjust this value to your desired margin */
 }
-
 .contact-description {
   font-size: 24px;
-  margin-top: 0.5rem;
+  margin-top: 0.5rem; /* Adjust this value to your desired margin */
 }
-
 .contact-form {
   margin: auto;
   width: 50%;
-  border: 3px solid black;
+  /* border: 3px solid black; */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
 }
-
+.contact-input-basic,
+.contact-text-area {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: white;
+  color: black;
+}
+.contact-submit-button {
+  margin: 1rem auto 0 auto;
+  padding: 0.5rem 1rem;
+  background-color: #8036B1;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.contact-submit-button:hover {
+  background-color: #6A2D94;
+  transform: scale(1.05);
+}
+.card-style {
+  background-color: #7678A0;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
 .contact-input-basic {
   margin-top: 15px;
-  width: 600px;
+  width: 500px;
   height: 24px;
 }
-
 .contact-text-area {
   margin-top: 15px;
-  width: 600px;
-  height: 72px;
+  width: 500px;
+  height: 96px;
 }
-
+.contact-input-basic:hover,
+.contact-text-area:hover {
+  border-color: #805ED8; /* Change border color on hover */
+}
 .contact-submit-button {
   margin-top: 10px;
 }
@@ -302,6 +392,11 @@ charity-card.expanded {
   max-width: 500px;
   width: 100%;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 /* Modal header and navigation */
