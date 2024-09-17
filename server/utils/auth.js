@@ -9,7 +9,7 @@ module.exports = {
         extensions: {
           code: 'UNAUTHENTICATED',
         },
-      }),
+    }),
   // function for our authenticated routes
   authMiddleware: function ({req}) {
     // allows token to be sent via  req.query or headers
@@ -19,7 +19,7 @@ module.exports = {
     if (req.headers.authorization) {
       token = token.split(' ').pop().trim();
     }
-// Bypass authentication in development
+    // Bypass authentication in development
     if (process.env.NODE_ENV === 'development') {
       req.user = { _id: '66e25ab343b1cfcd28f42381' }; // Mock user for testing
       return req;
@@ -41,9 +41,8 @@ module.exports = {
       
     }
     return req
-
- 
   },
+  
   signToken: function ({ username, email, _id }) {
     const payload = { username, email, _id };
 
