@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import "../index.css";
-import { Nav, Modal, Tab } from "react-bootstrap";
 
 import SignUpForm from "./SignupForm";
 import LoginForm from "./LoginForm";
@@ -10,6 +9,14 @@ import Auth from '../utils/auth';
 
 function Navigation() {
   const [showModal, setShowModal] = useState(false);
+  const [activeTab, setActiveTab] = useState("login");
+
+  const closeModalOnOutsideClick = (e) => {
+    if (e.target.className === "modal-overlay") {
+      setShowModal(false);
+    }
+  };
+
   return (
     <>
       <div className="navbar-index navbar navbar-bar navbar-expand-md">
@@ -18,7 +25,6 @@ function Navigation() {
             <ul className="nav navbar-nav">
               <li className="nav-item me-4">
                 <NavLink
-                  // exact
                   to="/"
                   className={({ isActive }) =>
                     isActive
@@ -66,38 +72,31 @@ function Navigation() {
           </div>
         </div>
       </div>
-      <Modal
-        size="lg"
-        show={showModal}
-        onHide={() => setShowModal(false)}
-        aria-labelledby="signup-modal"
-      >
-        {/* tab container to do either signup or login component */}
-        <Tab.Container defaultActiveKey="login">
-          <Modal.Header closeButton>
-            <Modal.Title id="signup-modal">
-              <Nav variant="pills">
-                <Nav.Item>
-                  <Nav.Link eventKey="login">Login</Nav.Link>
-                </Nav.Item>
-                <Nav.Item>
-                  <Nav.Link eventKey="signup">Sign Up</Nav.Link>
-                </Nav.Item>
-              </Nav>
-            </Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-            <Tab.Content>
-              <Tab.Pane eventKey="login">
+
+      {/* Modal */}
+      {showModal && (
+        <div
+          className="modal-overlay"
+          onClick={closeModalOnOutsideClick}
+        >
+          <div className="modal-container">
+            <div className="modal-header">
+              <button className="close-button" onClick={() => setShowModal(false)}>X</button>
+              <nav className="modal-nav">
+                <button onClick={() => setActiveTab("login")}>Login</button>
+                <button onClick={() => setActiveTab("signup")}>Sign Up</button>
+              </nav>
+            </div>
+            <div className="modal-body">
+              {activeTab === "login" ? (
                 <LoginForm handleModalClose={() => setShowModal(false)} />
-              </Tab.Pane>
-              <Tab.Pane eventKey="signup">
+              ) : (
                 <SignUpForm handleModalClose={() => setShowModal(false)} />
-              </Tab.Pane>
-            </Tab.Content>
-          </Modal.Body>
-        </Tab.Container>
-      </Modal>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 }
