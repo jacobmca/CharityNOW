@@ -15,6 +15,9 @@ const SignupForm = () => {
   const [showAlert, setShowAlert] = useState(false);
 
   const [addUser] = useMutation(ADD_USER);
+  const [userError, setUserError] = useState(false);
+  const [emailError, setEmailError] = useState(false);
+  const [passwordError, setPasswordError] = useState(false);
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -32,6 +35,21 @@ const SignupForm = () => {
       setValidated(true);
       return;
     }
+
+    if (!userFormData.email || userFormData.user.trim() === "") {
+      setUserError(true)
+      return 
+    }
+
+    if (!userFormData.email || userFormData.email.trim() === "") {
+        setEmailError(true)
+        return 
+      }
+
+      if (!userFormData.password || userFormData.password.trim() === "") {
+        setPasswordError(true)
+        return 
+      }
 
     try {
       const { data } = await addUser({
@@ -70,7 +88,7 @@ const SignupForm = () => {
             value={userFormData.username}
             required
           />
-          <Form.Control.Feedback type='invalid'>Username is required!</Form.Control.Feedback>
+          {userError && <Form.Control.Feedback type='invalid'>Username is required!</Form.Control.Feedback>}
         </Form.Group>
 
         <Form.Group className='mb-3'>
@@ -83,7 +101,7 @@ const SignupForm = () => {
             value={userFormData.email}
             required
           />
-          <Form.Control.Feedback type='invalid'>Email is required!</Form.Control.Feedback>
+          {emailError && <Form.Control.Feedback type='invalid'>Email is required!</Form.Control.Feedback>}
         </Form.Group>
 
         <Form.Group className='mb-3'>
@@ -96,7 +114,7 @@ const SignupForm = () => {
             value={userFormData.password}
             required
           />
-          <Form.Control.Feedback type='invalid'>Password is required!</Form.Control.Feedback>
+          {passwordError && <Form.Control.Feedback type='invalid'>Password is required!</Form.Control.Feedback>}
         </Form.Group>
         <Button
           disabled={!(userFormData.username && userFormData.email && userFormData.password)}
