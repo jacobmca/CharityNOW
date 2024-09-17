@@ -12,6 +12,7 @@ const LoginForm = () => {
   const [userFormData, setUserFormData] = useState({ email: '', password: '' });
   const [validated, setValidated] = useState(false);
   const [showAlert, setShowAlert] = useState(false);
+  const [emailError, setEmailError] = useState(false);
 
   const [loginUser] = useMutation(LOGIN_USER);
 
@@ -22,13 +23,18 @@ const LoginForm = () => {
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
+    setEmailError(false)
 
-    const form = event.currentTarget;
-    if (form.checkValidity() === false) {
-      // event.preventDefault();
-      // event.stopPropagation();
-      setValidated(true);
-      return;
+    // const form = event.currentTarget;
+    // if (form.checkValidity() === false) {
+    //   // event.preventDefault();
+    //   // event.stopPropagation();
+    //   setValidated(true);
+    //   return;
+    // }
+    if (!userFormData.email || userFormData.email.trim() === "") {
+      setEmailError(true)
+      return 
     }
 
     try {
@@ -70,9 +76,9 @@ const LoginForm = () => {
             value={userFormData.email}
             required
           />
-          <Form.Control.Feedback type="invalid">
+          {emailError && <Form.Control.Feedback type="invalid">
             Email is required!
-          </Form.Control.Feedback>
+          </Form.Control.Feedback>}
         </Form.Group>
 
         <Form.Group className='mb-3'>
@@ -90,7 +96,7 @@ const LoginForm = () => {
           </Form.Control.Feedback>
         </Form.Group>
         <Button
-          disabled={!(userFormData.email && userFormData.password)}
+          // disabled={!(userFormData.email && userFormData.password)}
           type="submit"
           variant="success"
         >
