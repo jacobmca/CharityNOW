@@ -11,35 +11,49 @@ const Home = () => {
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="stylesheet" href="style.css" />
       <title>Charitable donations</title>
-      <div className="navbar">
-        <h1 className="welcome-h1">Welcome to CharityNow</h1>
-        <div className="right-buttons">
-          <a href="#login">Log In</a>
-          <a href="#donate">Donate</a>
-          <a href="#contact">Contact</a>
-        </div>
-      </div>
       <div className="content">
-        <h1 className="welcome-h1">
-          Welcome to CharityNow, a place to help others.
-        </h1>
-        <div className="image-container">
-          <a>
-            <img
-              className="homepage-image-1"
-              src="../public/home-charity-1.jpg"
-              alt="charity image"
-            />
-          </a>
-          <a>
-            <img
-              className="homepage-image-2"
-              src="../public/home-charity-2.jpg"
-              alt="charity image"
-            />
-          </a>
+        <h1 className="welcome-h1">Welcome to CharityNOW!</h1>
+        <h3 className="welcome-h3">
+          Your donation can make a difference in someone's life. Join us in
+        </h3>
+        <i className="hook">
+          Support a brighter future with CharityNOW! Our user-friendly platform
+          makes it easy to contribute to causes that matter. With every
+          donation, you're making a real difference in the lives of those in
+          need, helping to create a world where kindness and generosity change
+          lives. Join our community of givers today and experience the joy of
+          giving back, knowing your contributions are going directly to
+          impactful, transparent initiatives.
+        </i>
+        <div className="content">
+          <div className="image-container">
+            <div className="image-row">
+              <img
+                className="homepage-image-1"
+                src="../public/home-charity-1.jpg"
+                alt="charity image"
+              />
+              <div className="discription-1">
+                Make a difference with CharityNOW! Your donation helps transform
+                lives and supports vital causes. Join us in spreading hope and
+                positivity today!{" "}
+              </div>
+            </div>
+            <div className="image-row">
+              <img
+                className="homepage-image-2"
+                src="../public/home-charity-2.jpg"
+                alt="charity image"
+              />
+              <div className="discription-1">
+                By donating on CharityNOW, you're supporting meaningful,
+                transparent causes with a direct impact. Every contribution
+                brings hope and makes a real difference in the lives of those in
+                need.
+              </div>
+            </div>
+          </div>
         </div>
-        <h2 className="discription-1" />
       </div>
       <footer className="footer">
         <p>
@@ -48,31 +62,6 @@ const Home = () => {
         </p>
       </footer>
     </div>
-
-    // <div className="container mx-auto px-4">
-    //   <div className="former-body">
-    //     <h1 className="text-primary text-3xl font-bold my-4">Welcome!</h1>
-    //     <h3 className="text-xl mb-4">
-    //       Take a look at the most recent contributions!
-    //     </h3>
-    //     {loading ? (
-    //       <div>Loading...</div>
-    //     ) : (
-    //       <div>
-    //         <h2 className="text-2xl font-semibold mb-4">Recent Donations</h2>
-    //         {donations.length ? (
-    //           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-    //             {donations.map((donation) => (
-    //               <Donation key={donation._id} donation={donation} />
-    //             ))}
-    //           </div>
-    //         ) : (
-    //           <p>No donations yet.</p>
-    //         )}
-    //       </div>
-    //     )}
-    //   </div>
-    // </div>
   );
 };
 export default Home;
