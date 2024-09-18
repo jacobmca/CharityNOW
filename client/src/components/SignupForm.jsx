@@ -56,9 +56,9 @@ const SignupForm = () => {
       {/* This is needed for the validation functionality above */}
       <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
         {/* show alert if server response is bad */}
-        <Alert dismissible onClose={() => setShowAlert(false)} variant='danger'>
+        {/* <Alert dismissible onClose={() => setShowAlert(false)} variant='danger'>
           Something went wrong with your signup!
-        </Alert>
+        </Alert> */}
 
         <Form.Group className='mb-3'>
           <Form.Label htmlFor='username'>Username</Form.Label>
@@ -70,7 +70,7 @@ const SignupForm = () => {
             value={userFormData.username}
             required
           />
-          <Form.Control.Feedback type='invalid'>Username is required!</Form.Control.Feedback>
+          {/* <Form.Control.Feedback type='invalid'>Username is required!</Form.Control.Feedback> */}
         </Form.Group>
 
         <Form.Group className='mb-3'>
@@ -83,7 +83,7 @@ const SignupForm = () => {
             value={userFormData.email}
             required
           />
-          <Form.Control.Feedback type='invalid'>Email is required!</Form.Control.Feedback>
+          {/* <Form.Control.Feedback type='invalid'>Email is required!</Form.Control.Feedback> */}
         </Form.Group>
 
         <Form.Group className='mb-3'>
@@ -96,7 +96,7 @@ const SignupForm = () => {
             value={userFormData.password}
             required
           />
-          <Form.Control.Feedback type='invalid'>Password is required!</Form.Control.Feedback>
+          {/* <Form.Control.Feedback type='invalid'>Password is required!</Form.Control.Feedback> */}
         </Form.Group>
         <Button
           disabled={!(userFormData.username && userFormData.email && userFormData.password)}
