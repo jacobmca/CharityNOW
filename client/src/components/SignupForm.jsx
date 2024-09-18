@@ -15,6 +15,9 @@ const SignupForm = () => {
   const [showAlert, setShowAlert] = useState(false);
 
   const [addUser] = useMutation(ADD_USER);
+  const [userError, setUserError] = useState(false);
+  const [emailError, setEmailError] = useState(false);
+  const [passwordError, setPasswordError] = useState(false);
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -32,6 +35,21 @@ const SignupForm = () => {
       setValidated(true);
       return;
     }
+
+    if (!userFormData.email || userFormData.user.trim() === "") {
+      setUserError(true)
+      return 
+    }
+
+    if (!userFormData.email || userFormData.email.trim() === "") {
+        setEmailError(true)
+        return 
+      }
+
+      if (!userFormData.password || userFormData.password.trim() === "") {
+        setPasswordError(true)
+        return 
+      }
 
     try {
       const { data } = await addUser({
