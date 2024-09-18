@@ -1,4 +1,4 @@
-// see SignupForm.js for comments
+// LoginForm.js
 
 import { useState } from 'react';
 import { Form, Button, Alert } from 'react-bootstrap';
@@ -13,6 +13,7 @@ const LoginForm = () => {
   const [validated, setValidated] = useState(false);
   const [showAlert, setShowAlert] = useState(false);
   const [emailError, setEmailError] = useState(false);
+  const [passwordError, setPasswordError] = useState(false);
 
   const [loginUser] = useMutation(LOGIN_USER);
 
@@ -36,6 +37,11 @@ const LoginForm = () => {
       setEmailError(true)
       return 
     }
+
+    if (!userFormData.password || userFormData.password.trim() === "") {
+        setPasswordError(true)
+        return 
+      }
 
     try {
       const { data } = await loginUser({
@@ -91,9 +97,9 @@ const LoginForm = () => {
             value={userFormData.password}
             required
           />
-          <Form.Control.Feedback type="invalid">
+          {passwordError && <Form.Control.Feedback type="invalid">
             Password is required!
-          </Form.Control.Feedback>
+          </Form.Control.Feedback>}
         </Form.Group>
         <Button
           // disabled={!(userFormData.email && userFormData.password)}
