@@ -1,12 +1,14 @@
 import React, { useState, useQuery } from "react";
 import Charity from "../components/charity";
 import '../index.css';
+import { useAuth } from "../App";
 
   function Donate() {
-    const [expandedIndex, setExpandedIndex] = useState(null);  // Keep track of the expanded card
+    const [expandedIndex, setExpandedIndex] = useState(null);
+    const { isLoggedIn } = useAuth();
   
     const toggleExpand = (index) => {
-      setExpandedIndex(expandedIndex === index ? null : index);  // Toggle only the clicked card
+      setExpandedIndex(expandedIndex === index ? null : index);
     };
 
   const projects = [
@@ -43,9 +45,10 @@ import '../index.css';
   ];
 
   return (
-    <section className="container">
-      <h1 className="pick-charity text-center mt-3 mb-5">Pick A Charity</h1>
-      <div className="charity-grid">
+    <section className="charity-section">
+      <div charity-div>
+        <h2 className="pick-charity">Pick A Charity</h2>
+        <div className="charity-grid">
         {projects.map((project, index) => (
           <div
           className={`charity-card col-md-6 col-lg-4 mb-4 d-flex justify-content-center ${
@@ -57,11 +60,13 @@ import '../index.css';
             name={project.name}
             image={project.image}
             description={project.description}
-            isExpanded={expandedIndex === index}  // Check if the card is expanded
-            onToggle={() => toggleExpand(index)}  // Toggle expansion
+            isExpanded={expandedIndex === index}
+            onToggle={() => toggleExpand(index)}
+            isLoggedIn={isLoggedIn}
           />
         </div>        
         ))}
+        </div>
       </div>
     </section>
   );
