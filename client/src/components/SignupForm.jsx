@@ -36,7 +36,7 @@ const SignupForm = () => {
       return;
     }
 
-    if (!userFormData.email || userFormData.user.trim() === "") {
+    if (!userFormData.email || userFormData.username.trim() === "") {
       setUserError(true)
       return 
     }
