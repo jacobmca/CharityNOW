@@ -26,13 +26,13 @@ const LoginForm = () => {
     event.preventDefault();
     setEmailError(false)
 
-    // const form = event.currentTarget;
-    // if (form.checkValidity() === false) {
-    //   // event.preventDefault();
-    //   // event.stopPropagation();
-    //   setValidated(true);
-    //   return;
-    // }
+    const form = event.currentTarget;
+    if (form.checkValidity() === false) {
+      // event.preventDefault();
+      // event.stopPropagation();
+      setValidated(true);
+      return;
+    }
     if (!userFormData.email || userFormData.email.trim() === "") {
       setEmailError(true)
       return 
@@ -102,7 +102,7 @@ const LoginForm = () => {
           </Form.Control.Feedback>}
         </Form.Group>
         <Button
-          // disabled={!(userFormData.email && userFormData.password)}
+          disabled={!(userFormData.email && userFormData.password)}
           type="submit"
           variant="success"
         >
