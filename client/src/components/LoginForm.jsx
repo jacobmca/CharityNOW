@@ -1,4 +1,4 @@
-// see SignupForm.js for comments
+// LoginForm.js
 
 import { useState } from 'react';
 import { Form, Button, Alert } from 'react-bootstrap';
@@ -13,6 +13,7 @@ const LoginForm = () => {
   const [validated, setValidated] = useState(false);
   const [showAlert, setShowAlert] = useState(false);
   const [emailError, setEmailError] = useState(false);
+  const [passwordError, setPasswordError] = useState(false);
 
   const [loginUser] = useMutation(LOGIN_USER);
 
@@ -25,17 +26,22 @@ const LoginForm = () => {
     event.preventDefault();
     setEmailError(false)
 
-    // const form = event.currentTarget;
-    // if (form.checkValidity() === false) {
-    //   // event.preventDefault();
-    //   // event.stopPropagation();
-    //   setValidated(true);
-    //   return;
-    // }
+    const form = event.currentTarget;
+    if (form.checkValidity() === false) {
+      // event.preventDefault();
+      // event.stopPropagation();
+      setValidated(true);
+      return;
+    }
     if (!userFormData.email || userFormData.email.trim() === "") {
       setEmailError(true)
       return 
     }
+
+    if (!userFormData.password || userFormData.password.trim() === "") {
+        setPasswordError(true)
+        return 
+      }
 
     try {
       const { data } = await loginUser({
