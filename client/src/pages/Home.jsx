@@ -1,10 +1,10 @@
 import { useQuery } from "@apollo/client";
-import { QUERY_DONATIONS } from "../utils/queries";
-import Donation from "../components/Donation";
+// import { QUERY_DONATIONS } from "../utils/queries";
+// import Donation from "../components/Donation";
 // our Home page
 const Home = () => {
-  const { loading, data } = useQuery(QUERY_DONATIONS);
-  const donations = data?.donations || [];
+  // const { loading, data } = useQuery(QUERY_DONATIONS);
+  // const donations = data?.donations || [];
   return (
     <div>
       <meta charSet="UTF-8" />

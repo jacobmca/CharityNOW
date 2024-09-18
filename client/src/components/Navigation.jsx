@@ -17,6 +17,10 @@ function Navigation() {
     }
   };
 
+  const handleLogout = () => {
+    Auth.logout();
+  };
+
   return (
     <>
       <div className="navbar-index navbar navbar-bar navbar-expand-md">
@@ -60,13 +64,16 @@ function Navigation() {
                 </NavLink>
               </li>
               <li>
-              {Auth.loggedIn() ? (
-                <>
-                  <NavLink onClick={Auth.logout}>Logout</NavLink>
-                </>
-              ) : (
-                <NavLink onClick={() => setShowModal(true)}>Login/Sign Up</NavLink>
-              )}
+                {Auth.loggedIn() ? (
+                  <>
+                    {/* Display the username if logged in */}
+                    <NavLink to="/" onClick={handleLogout}>
+                      Hello {Auth.getProfile().username}, Click to Logout
+                    </NavLink>
+                  </>
+                ) : (
+                  <NavLink onClick={() => setShowModal(true)}>Login/Sign Up</NavLink>
+                )}
               </li>
             </ul>
           </div>
