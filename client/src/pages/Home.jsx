@@ -30,7 +30,7 @@ const Home = () => {
             <div className="image-row">
               <img
                 className="homepage-image-1"
-                src="../public/home-charity-1.jpg"
+                src="/home-charity-1.jpg"
                 alt="charity image"
               />
               <div className="discription-1">
@@ -42,7 +42,7 @@ const Home = () => {
             <div className="image-row">
               <img
                 className="homepage-image-2"
-                src="../public/home-charity-2.jpg"
+                src="/home-charity-2.jpg"
                 alt="charity image"
               />
               <div className="discription-1">
