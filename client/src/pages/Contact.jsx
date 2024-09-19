@@ -15,7 +15,7 @@ const ContactPage = () => {
         </div>
       </div>
       <div className="contact-image-section">
-              <img src="../../../public/charity.webp" alt="guy on the phone" className="contact-image"></img>
+              <img src="/charity.webp" alt="guy on the phone" className="contact-image"></img>
         </div>
     </div>
   );
