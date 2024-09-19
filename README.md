@@ -14,13 +14,17 @@ MERN one page website for discovering and donating to charities.
 * [Questions](#questions)
 
 ## Installation
-@@ -19,17 +21,39 @@ To install, please clone this repository to your computer using the following st
+To install, please clone this repository to your computer using the following steps in Github:
+
+1. Click the "Code" dropdown menu and copy the SSH URL.
+2. Open your terminal and navigate to the directory you would like to clone this repository into.
+3. Type "git clone <paste SSH URL>", replacing <paste SSH URL> with your copied SSH URL. You can substitute an SSH URL with an HTTPS URL.
 4. Press enter.
 
 ## Description
-CharityNOW, is a seamless platform where generosity meets simplicity. CharityNOW is a one-page MERN stack website designed to make donating to a variety of charities easy and efficient.
+CharityNOW, is a seamless platform where generosity meets simplicity. CharityNOW is a one-page MERN stack website designed to make donating to charities easy and efficient.
 <br>
-The inspiration behind CharityNOW stems from the need to simplify charitable giving in the digital age. Many individuals want to contribute to charitable causes but are deterred by cumbersome donation processes and fragmented information. By developing CharityNOW, we aim to:
+The inspiration behind CharityNOW stems from the need to simplify charitable donations. Many individuals want to contribute to charitable causes but are deterred by cumbersome and bifurcatec donation processes. By developing CharityNOW, we aim to:
 <br>
 1. Enhance Accessibility: Make it easier for people to find and donate to charities from a single, user-friendly platform.
 <br>
@@ -51,6 +55,7 @@ Insert Description.
 After downloading the program per the below, run the following commands in your terminal:
 
 npm i
+npm seed
 npm run develop
 
 Once the program is running, you should see the following home page:
@@ -61,16 +66,17 @@ To start the application, run: <br>
 
 Insert remaining description.
 
-@@ -40,11 +64,15 @@ When contributing to this repository, please reach out to our group via e-mail t
+## Contributions
+When contributing to this repository, please reach out to me via e-mail to discuss the change you would like to make first. I am open to ideas both with regards to data stored in the tables and alterations to user interaction with the data.
+
+## License
 This project is licensed under the MIT License. For more information, please see the [MIT License](https://opensource.org/licenses/MIT).
 
 ## Credits
-This program was created by the group Charitable Coders for the UC Berkeley eDX Coding Boot Camp. The group members are Matt Andrade, Mehrdod Rezvany, Jacob McAuliffe, William Lee, Charles Hutchings, Stefan Wanigatunga
+This program was created by the group Charitable Coders for the UC Berkeley eDX Coding Boot Camp. The group members are Matt Andrade, Mehrdod Rezvany, Jacob McAuliffe, William Lee, Charles Hutchings, and Stefan Wanigatunga. We also want to thank our TAs who helped temendously throughout the project.
 
 ## Tests
-
-
-This program was created by the group Charitable Coders for the UC Berkeley eDX Coding Boot Camp. The group members are Matt Andrade, Mehrdod Rezvany, Jacob McAuliffe, William Lee, Charles Hutchings, Stefan Wanigatunga, and we also want to thank our TAs who helped temendously throughout the project.
+In the future, we'd like to further develop this project by creating a profile page for the user. This page would list user details, and track the donations the user has made. Additionally, we'd like to add more organizations to the donate page, and have it populate these groups from the back-end rather than have it all hard-coded to the front-end.
 
 ## GitHub Links
 Jacob McAuliffe - https://github.com/jacobmca <br>
@@ -79,5 +85,6 @@ Charlie Hutchings - https://github.com/CharlesHut <br>
 Mehrdod Rezvany - https://github.com/reztndev <br>
 Stefan Wanigatuna - https://github.com/stefanfilm <br>
 William Lee - https://github.com/ItsWillyNilly <br>
+
 ## Questions
-If you have further questions, you can reach me at [mcauliffemedia@gmail.com](mailto:mcauliffemedia@gmail.com).
+If you have further questions about this project, you can reach us at [mcauliffemedia@gmail.com](mailto:mcauliffemedia@gmail.com).

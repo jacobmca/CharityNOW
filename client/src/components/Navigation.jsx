@@ -68,7 +68,7 @@ function Navigation() {
                   <>
                     {/* Display the username if logged in */}
                     <NavLink to="/" onClick={handleLogout}>
-                      Hello {Auth.getProfile().username}, Click to Logout
+                      Click to Logout
                     </NavLink>
                   </>
                 ) : (
