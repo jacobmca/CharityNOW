@@ -77,7 +77,7 @@ Jacob McAuliffe - https://github.com/jacobmca <br>
 Matthew Andrade - https://github.com/mandrade09 <br>
 Charlie Hutchings - https://github.com/CharlesHut <br>
 Mehrdod Rezvany - https://github.com/reztndev <br>
-Stefan Wanigatuna - https://github.com/stefanfilm <br>
+Stefan Wanigatunga - https://github.com/stefanfilm <br>
 William Lee - https://github.com/ItsWillyNilly <br>
 ## Questions
 If you have further questions, you can reach me at [mcauliffemedia@gmail.com](mailto:mcauliffemedia@gmail.com).
