@@ -4,13 +4,13 @@ MERN one page website for discovering and donating to charities.
 ## Table of Contents
 * [Installation](#installation)
 * [Description](#description)
-* [Screenshots](#Screenshots)
-* [Technologies](#Technologies)
+* [Technologies](#technologies)
 * [Usage](#usage)
 * [Contributions](#contributions)
 * [License](#license)
 * [Credits](#credits)
 * [Tests](#tests)
+* [Github](#github)
 * [Questions](#questions)
 
 ## Installation
@@ -32,8 +32,6 @@ The inspiration behind CharityNOW stems from the need to simplify charitable don
 <br>
 3. Educate and Inform: Offer detailed information about various charities to help users make informed decisions about their donations.
 
-## Screenshots   
-
 ## Technologies
 
 ### React
@@ -52,19 +50,33 @@ Insert Description.
 
 ## Usage
 
-After downloading the program per the below, run the following commands in your terminal:
+After downloading the program per the below, run the following commands in your terminal to open the program:
 
-npm i
-npm seed
+npm i <br>
+npm seed <br>
 npm run develop
 
-Once the program is running, you should see the following home page:
-To start the application, run: <br>
-1. Run npm start to start the server <br>
-2. Open a web browser and navigate to http://localhost:3001 <br>
-3. Register a new user or login with an existing user <br>
+[Link to Deployed Program](https://charitynow.onrender.com/)
 
-Insert remaining description.
+Once the program is running, you should see the following home page:
+
+![Screenshot](client/public/screenshot1.png)
+
+Click "Login/Sign Up" to login or create an account. You can toggle between the appropriate tabs depending on what action you wish to take. To sign up, enter a username, e-mail and password; to login, enter an e-mail and password.
+
+![Screenshot](client/public/screenshot5.png)
+
+To logout, select the "Click to Logout" button in the navigation bar.
+
+![Screenshot](client/public/screenshot4.png)
+
+Navigate to the Donate page to see the selection of charities. Click the "More" button under a charity for more information; click "Donate" to donate money. Donation options are $5, $10, $20, or a custom amount. After picking an option, select "Okay" to donate. Note that only logged in users can donate.
+
+![Screenshot](client/public/screenshot2.png)
+
+Navigate to the Contact page to send us a message. Be sure to include your name, e-mail, and a message body.
+
+![Screenshot](client/public/screenshot3.png)
 
 ## Contributions
 When contributing to this repository, please reach out to me via e-mail to discuss the change you would like to make first. I am open to ideas both with regards to data stored in the tables and alterations to user interaction with the data.
@@ -87,4 +99,4 @@ Stefan Wanigatunga - https://github.com/stefanfilm <br>
 William Lee - https://github.com/ItsWillyNilly <br>
 
 ## Questions
-If you have further questions about this project, you can reach us at [mcauliffemedia@gmail.com](mailto:mcauliffemedia@gmail.com).
+If you have further questions about this project, please e-mail [mcauliffemedia@gmail.com](mailto:mcauliffemedia@gmail.com).
