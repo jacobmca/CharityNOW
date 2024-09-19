@@ -1,5 +1,5 @@
 import React, { useState, useQuery } from "react";
-import Charity from "../components/charity";
+import Charity from "../components/Charity";
 import '../index.css';
 import { useAuth } from "../App";
 
